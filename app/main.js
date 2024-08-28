@@ -25,7 +25,7 @@ function matchPattern(inputLine, pattern) {
         return true;
       }
     }
-    if(inputLine.includes('-')){return true;}
+    if(inputLine.includes('_')){return true;}
     return false;
   } else {
     throw new Error(`Unhandled pattern ${pattern}`);
