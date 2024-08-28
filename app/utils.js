@@ -31,4 +31,9 @@ function positiveCharGrp(inputLine, pattern)
     return false;
 }
 
-export {matchDigits, alphaNumeric, positiveCharGrp};
+function negativeCharGrp(inputLine, pattern)
+{
+    return !positiveCharGrp(inputLine, pattern);
+}
+
+export {matchDigits, alphaNumeric, positiveCharGrp, negativeCharGrp};

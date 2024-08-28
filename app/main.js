@@ -1,5 +1,5 @@
 // const { matchDigits, alphaNumeric, positiveCharGrp } = require("./utils.js");
-import { matchDigits, alphaNumeric, positiveCharGrp } from "./utils.js";
+import { matchDigits, alphaNumeric, positiveCharGrp, negativeCharGrp } from "./utils.js";
 import { readFileSync } from "fs";
 
 function matchPattern(inputLine, pattern) {
@@ -16,6 +16,10 @@ function matchPattern(inputLine, pattern) {
   }else if(pattern[0] === '[' && pattern[pattern.length-1] === ']'){
 
     return positiveCharGrp(inputLine, pattern);
+
+  }else if(pattern[0] === '[' && pattern[pattern.length-1] === ']' && pattern[1] === '^'){
+
+    return negativeCharGrp(inputLine, pattern);
 
   }else {
     throw new Error(`Unhandled pattern ${pattern}`);
