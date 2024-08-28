@@ -30,6 +30,8 @@ function matchPattern(inputLine, pattern) {
       }
     }
     if(inputLine.includes('_')){return true;}
+    console.log(inputLine, "bye");
+    
     return false;
 
   } else {
