@@ -13,7 +13,7 @@ function matchPattern(inputLine, pattern) {
     
     return alphaNumeric(inputLine);
 
-  }else if(pattern[0] === '[' && pattern[pattern.length-1] === ']'){
+  }else if(pattern[0] === '[' && pattern[pattern.length-1] === ']' && pattern[1] !== '^'){
 
     return positiveCharGrp(inputLine, pattern);
 
