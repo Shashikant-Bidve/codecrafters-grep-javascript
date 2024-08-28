@@ -11,28 +11,16 @@ function matchPattern(inputLine, pattern) {
     return false;
 
   }else if(pattern === "\\w"){
-    console.log("word".includes("i"));
+    // console.log("word".includes("i"));
     
-    for(let i = 'a';i<='z';i++){
-      if(inputLine.includes(i)){
-        return true;
-      }
+    for(let i = 0;i<inputLine.length;i++)
+    {
+      if(inputLine[i]>='a' && inputLine[i]<='z'){return true;}
+      if(inputLine[i]>='0' && inputLine[i]<='9'){return true;}
+      if(inputLine[i]>='A' && inputLine[i]<='Z'){return true;}
+      if(inputLine[i] == '_'){return true;}
     }
-
-    for(let i = 'A';i<='Z';i++){
-      if(inputLine.includes(i)){
-        return true;
-      }
-    }
-    for(let i = '0';i<='9';i++){
-      if(inputLine.includes(i)){
-        return true;
-      }
-    }
-    if(inputLine.includes('_')){return true;}
-    
     return false;
-
   } else {
     throw new Error(`Unhandled pattern ${pattern}`);
   }
