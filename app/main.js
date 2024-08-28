@@ -3,26 +3,11 @@ import { matchDigits, alphaNumeric, positiveCharGrp, negativeCharGrp } from "./u
 import { readFileSync } from "fs";
 
 function matchPattern(inputLine, pattern) {
-  if (pattern.length === 1) {
+  let regex = pattern.replace('//d','[0-9]').replace('//w','[0-9a-zA-Z]');
+  if(pattern.length === 1){
     return inputLine.includes(pattern);
-  }else if(pattern === "\\d"){
-    
-    return matchDigits(inputLine);
-
-  }else if(pattern === "\\w"){
-    
-    return alphaNumeric(inputLine);
-
-  }else if(pattern[0] === '[' && pattern[pattern.length-1] === ']' && pattern[1] !== '^'){
-
-    return positiveCharGrp(inputLine, pattern);
-
-  }else if(pattern[0] === '[' && pattern[pattern.length-1] === ']' && pattern[1] === '^'){
-
-    return negativeCharGrp(inputLine, pattern);
-
-  }else {
-    throw new Error(`Unhandled pattern ${pattern}`);
+  }else{
+    return RegExp(regex).test(inputLine);
   }
 }
 
