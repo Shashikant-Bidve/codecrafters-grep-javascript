@@ -1,27 +1,21 @@
+const { matchDigits, alphaNumeric } = require("./utils");
+
 function matchPattern(inputLine, pattern) {
   if (pattern.length === 1) {
     return inputLine.includes(pattern);
   }else if(pattern === "\\d"){
     
-    for(let i = '0';i<='9';i++){
-      if(inputLine.includes(i)){
-        return true;
-      }
-    }
-    return false;
+    return matchDigits(inputLine);
 
   }else if(pattern === "\\w"){
-    // console.log("word".includes("i"));
     
-    for(let i = 0;i<inputLine.length;i++)
-    {
-      if(inputLine[i]>='a' && inputLine[i]<='z'){return true;}
-      if(inputLine[i]>='0' && inputLine[i]<='9'){return true;}
-      if(inputLine[i]>='A' && inputLine[i]<='Z'){return true;}
-      if(inputLine[i] == '_'){return true;}
-    }
-    return false;
-  } else {
+    return alphaNumeric(inputLine);
+
+  }else if(pattern[0] === '[' && pattern[pattern.length-1] === ']'){
+
+    return positiveCharGrp(inputLine, pattern);
+
+  }else {
     throw new Error(`Unhandled pattern ${pattern}`);
   }
 }
