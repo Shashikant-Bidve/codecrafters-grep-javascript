@@ -1,4 +1,4 @@
-export function matchDigits(inputLine)
+function matchDigits(inputLine)
 {
     for(let i = '0';i<='9';i++){
         if(inputLine.includes(i)){
@@ -8,7 +8,7 @@ export function matchDigits(inputLine)
     return false;
 }
 
-export function alphaNumeric(inputLine)
+function alphaNumeric(inputLine)
 {
     for(let i = 0;i<inputLine.length;i++)
         {
@@ -20,7 +20,7 @@ export function alphaNumeric(inputLine)
         return false;
 }
 
-export function positiveCharGrp(inputLine, pattern)
+function positiveCharGrp(inputLine, pattern)
 {
     for(let i = 1;i<pattern.length-2;i++)
     {
@@ -30,3 +30,5 @@ export function positiveCharGrp(inputLine, pattern)
     }
     return false;
 }
+
+export {matchDigits, alphaNumeric, positiveCharGrp};
