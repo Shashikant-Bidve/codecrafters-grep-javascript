@@ -11,9 +11,8 @@ function matchPattern(inputLine, pattern) {
     return false;
 
   }else if(pattern === "\\w"){
-
+    console.log("Hi");
     
-
     for(let i = 'a';i<='z';i++){
       if(inputLine.includes(i)){
         return true;
