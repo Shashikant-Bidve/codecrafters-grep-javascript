@@ -1,5 +1,6 @@
 // const { matchDigits, alphaNumeric, positiveCharGrp } = require("./utils.js");
 import { matchDigits, alphaNumeric, positiveCharGrp } from "./utils.js";
+import { readFileSync } from "fs";
 
 function matchPattern(inputLine, pattern) {
   if (pattern.length === 1) {
@@ -23,7 +24,7 @@ function matchPattern(inputLine, pattern) {
 
 function main() {
   const pattern = process.argv[3];
-  const inputLine = require("fs").readFileSync(0, "utf-8").trim();
+  const inputLine = readFileSync(0, "utf-8").trim();
 
   if (process.argv[2] !== "-E") {
     console.log("Expected first argument to be '-E'");
