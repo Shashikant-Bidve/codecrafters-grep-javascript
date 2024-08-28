@@ -9,24 +9,30 @@ function matchPattern(inputLine, pattern) {
       }
     }
     return false;
+
   }else if(pattern === "\\w"){
-    for(let i = '0';i<='9';i++){
-      if(inputLine.includes(i)){
-        return true;
-      }
-    }
+
+    
+
     for(let i = 'a';i<='z';i++){
       if(inputLine.includes(i)){
         return true;
       }
     }
+
     for(let i = 'A';i<='Z';i++){
+      if(inputLine.includes(i)){
+        return true;
+      }
+    }
+    for(let i = '0';i<='9';i++){
       if(inputLine.includes(i)){
         return true;
       }
     }
     if(inputLine.includes('_')){return true;}
     return false;
+
   } else {
     throw new Error(`Unhandled pattern ${pattern}`);
   }
