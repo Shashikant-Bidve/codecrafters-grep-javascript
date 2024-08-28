@@ -1,7 +1,7 @@
 function matchPattern(inputLine, pattern) {
   if (pattern.length === 1) {
     return inputLine.includes(pattern);
-  }else if(pattern === "\d"){
+  }else if(pattern === "\\d"){
     
     for(let i = '0';i<='9';i++){
       if(inputLine.includes(i)){
