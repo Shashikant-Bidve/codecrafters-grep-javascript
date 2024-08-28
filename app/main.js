@@ -1,4 +1,5 @@
-const { matchDigits, alphaNumeric, positiveCharGrp } = require("./utils.js");
+// const { matchDigits, alphaNumeric, positiveCharGrp } = require("./utils.js");
+import { matchDigits, alphaNumeric, positiveCharGrp } from "./utils.js";
 
 function matchPattern(inputLine, pattern) {
   if (pattern.length === 1) {
