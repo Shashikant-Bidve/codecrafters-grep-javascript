@@ -11,7 +11,7 @@ function matchPattern(inputLine, pattern) {
     return false;
 
   }else if(pattern === "\\w"){
-    console.log("Hi");
+    console.log(word.includes("i"));
     
     for(let i = 'a';i<='z';i++){
       if(inputLine.includes(i)){
@@ -30,7 +30,6 @@ function matchPattern(inputLine, pattern) {
       }
     }
     if(inputLine.includes('_')){return true;}
-    console.log(inputLine, "bye");
     
     return false;
 
